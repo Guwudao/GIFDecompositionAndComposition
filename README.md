@@ -77,6 +77,7 @@ func decompositionImage( _ imageType: imageType, _ path: String, _ locatioin: St
     }
 ```
 <br>
+
 + 合成GIF
 
 ```
@@ -120,6 +121,7 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
     }
 ```
 <br>
+
 + 播放的部分就比较简单了，当我们分解gif拿到每一帧图片后，只需要调用系统API，剩下的事苹果已经帮我们完成。
 
 ```
@@ -135,6 +137,5 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 
 ```
 <br>
-
 ### 最后
 [附上GitHub的传送门](https://github.com/Guwudao/GIFDecompositionAndComposition)
