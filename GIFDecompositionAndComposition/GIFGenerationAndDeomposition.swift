@@ -16,6 +16,12 @@ enum imageType {
 
 extension UIViewController {
     
+    /// 根据传入图片数组创建gif动图
+    ///
+    /// - Parameters:
+    ///   - images: 源图片数组
+    ///   - imageName: 生成gif图片名称
+    ///   - imageCuont: 图片总数量
     func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuont: Int) {
         
         //在Document目录下创建gif文件
@@ -48,6 +54,14 @@ extension UIViewController {
         print(gifPath)
     }
     
+    
+    /// 把gif动图分解成每一帧图片
+    ///
+    /// - Parameters:
+    ///   - imageType: 分解后的图片格式
+    ///   - path: gif路径
+    ///   - locatioin: 分解后图片保存路径（如果为空则保存在默认路径）
+    ///   - imageName: 分解后图片名称
     func decompositionImage( _ imageType: imageType, _ path: String, _ locatioin: String = "", _ imageName: String = "") {
         
         //把图片转成data
