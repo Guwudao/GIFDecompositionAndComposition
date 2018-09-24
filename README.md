@@ -1,0 +1,2 @@
+# GIFDecompositionAndComposition
+iOS中GIF的分解、合成和展示
