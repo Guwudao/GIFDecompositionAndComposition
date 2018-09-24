@@ -139,4 +139,5 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 <br>
 
 ### 最后
-[附上GitHub的传送门](https://github.com/Guwudao/GIFDecompositionAndComposition)
+[附上简书的传送门](https://www.jianshu.com/p/4771e9ca65af)
+### 最后
