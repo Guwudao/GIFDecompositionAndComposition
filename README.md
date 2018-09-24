@@ -19,8 +19,7 @@ iOS中GIF的分解、合成和展示
     ///   - path: gif路径
     ///   - locatioin: 分解后图片保存路径（如果为空则保存在默认路径）
     ///   - imageName: 分解后图片名称
-```
-```
+    
 func decompositionImage( _ imageType: imageType, _ path: String, _ locatioin: String = "", _ imageName: String = "") {
         
         //把图片转成data
@@ -87,8 +86,7 @@ func decompositionImage( _ imageType: imageType, _ path: String, _ locatioin: St
     ///   - images: 源图片数组
     ///   - imageName: 生成gif图片名称
     ///   - imageCuont: 图片总数量
-```
-```
+
 func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuont: Int) {
         
         //在Document目录下创建gif文件
@@ -123,6 +121,7 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 ```
 <br>
 + 播放的部分就比较简单了，当我们分解gif拿到每一帧图片后，只需要调用系统API，剩下的事苹果已经帮我们完成。
+
 ```
         var images: [UIImage] = []
         for i in 0...66 {
@@ -136,5 +135,6 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 
 ```
 <br>
-### 最后 
+
+### 最后
 [附上GitHub的传送门](https://github.com/Guwudao/GIFDecompositionAndComposition)
