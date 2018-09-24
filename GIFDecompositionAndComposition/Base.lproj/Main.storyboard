@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GIFDecompositionAndComposition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSr-Ri-sS2">
+                                <rect key="frame" x="87" y="70" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.96826413039825543" blue="0.032590146820800081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hSI-Ek-iCd"/>
+                                    <constraint firstAttribute="width" constant="200" id="rfM-Wg-NNU"/>
+                                </constraints>
+                                <state key="normal" title="分解GIF"/>
+                                <connections>
+                                    <action selector="decomposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsa-xn-O3W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2Y-FG-sdB">
+                                <rect key="frame" x="87" y="150" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.96826413040000003" blue="0.032590146819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Gmf-Gt-jXC"/>
+                                    <constraint firstAttribute="height" constant="50" id="oK9-16-S3o"/>
+                                </constraints>
+                                <state key="normal" title="合成GIF"/>
+                                <connections>
+                                    <action selector="generation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Epv-uE-DYm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBy-fp-LrU">
+                                <rect key="frame" x="87" y="230" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.96826413040000003" blue="0.032590146819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2VV-O1-wLZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="rgD-xb-vYN"/>
+                                </constraints>
+                                <state key="normal" title="播放GIF"/>
+                                <connections>
+                                    <action selector="display:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ksG-f5-Hh3"/>
+                                    <action selector="generation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJ7-lC-hBu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K13-Xi-1X7">
+                                <rect key="frame" x="37" y="330" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ebo-7h-ty1"/>
+                                    <constraint firstAttribute="width" constant="300" id="wfJ-I7-8dd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="t2Y-FG-sdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aur-EC-1oM"/>
+                            <constraint firstItem="K13-Xi-1X7" firstAttribute="top" secondItem="CBy-fp-LrU" secondAttribute="bottom" constant="50" id="Fgn-vH-EGx"/>
+                            <constraint firstItem="uSr-Ri-sS2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Rfh-ZY-swo"/>
+                            <constraint firstItem="CBy-fp-LrU" firstAttribute="top" secondItem="t2Y-FG-sdB" secondAttribute="bottom" constant="30" id="TEp-Oc-Jcl"/>
+                            <constraint firstItem="CBy-fp-LrU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TgV-yQ-6j6"/>
+                            <constraint firstItem="K13-Xi-1X7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a5N-Ui-lIX"/>
+                            <constraint firstItem="uSr-Ri-sS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rwq-kn-Yrt"/>
+                            <constraint firstItem="t2Y-FG-sdB" firstAttribute="top" secondItem="uSr-Ri-sS2" secondAttribute="bottom" constant="30" id="tnB-FC-sew"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageV" destination="K13-Xi-1X7" id="Dan-ak-vs0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>

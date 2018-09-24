@@ -9,17 +9,42 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var imageV: UIImageView!
+    let imageArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
+    @IBAction func decomposition(_ sender: UIButton) {
+        guard let path = Bundle.main.path(forResource: "coke", ofType: "gif") else { return }
+//        decompositionImage(.png, path)
+        decompositionImage(.jpg, path, "", "coke")
+    }
+    
+    @IBAction func generation(_ sender: UIButton) {
+        for i in 0...66 {
+            guard let image = UIImage(named: "\(i).png") else { return }
+            imageArray.add(image)
+        }
+        compositionImage(imageArray, "plane", imageArray.count)
+    }
+    
+    @IBAction func display(_ sender: UIButton) {
+        var images: [UIImage] = []
+        for i in 0...66 {
+            guard let image = UIImage(named: "\(i).png") else { return }
+            images.append(image)
+        }
+        imageV.animationImages = images
+        imageV.animationDuration = 5
+        imageV.animationRepeatCount = 2
+        imageV.startAnimating()
+    }
+    
 }
 
