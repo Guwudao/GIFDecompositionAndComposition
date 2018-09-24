@@ -1,14 +1,14 @@
 # GIFDecompositionAndComposition
 iOS中GIF的分解、合成和展示
 
-###题记
+### 题记
 如我们iOS开发者所知，目前iOS还没有支持原生展现GIF图片，因此合成和分解GIF图片对于我们处理各种动画效果有着很高的使用价值。话不多说先看看效果图：
 
 + 这里提供了3个按钮，本质上是两个方法，分解与合成GIF，因为只要有这两个方法的存在，无论我们拿到的是GIF图还是帧图，我们都能简单地在我们的设备上播放GIF。
 
 ![](https://upload-images.jianshu.io/upload_images/3350266-83792a4a45d741a0.gif?imageMogr2/auto-orient/strip)
 <br>
-###代码
+### 代码
 
 + 分解GIF
 ```
@@ -79,6 +79,7 @@ func decompositionImage( _ imageType: imageType, _ path: String, _ locatioin: St
 ```
 <br>
 + 合成GIF
+
 ```
 /// 根据传入图片数组创建gif动图
     ///
@@ -135,5 +136,5 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 
 ```
 <br>
-###最后 
+### 最后 
 [附上GitHub的传送门](https://github.com/Guwudao/GIFDecompositionAndComposition)
