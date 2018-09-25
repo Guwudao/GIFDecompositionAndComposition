@@ -122,18 +122,47 @@ func compositionImage(_ images: NSMutableArray, _ imageName: String, _ imageCuon
 ```
 <br>
 
-+ 播放的部分就比较简单了，当我们分解gif拿到每一帧图片后，只需要调用系统API，剩下的事苹果已经帮我们完成。
++ 播放
++ 这里继承UIImageView定义了一个JJGIFImageView类，增加了一个直接显示GIF图片的方法，只需要把GIF的路径传入，设置GIF时间以及重复次数即可。
 
 ```
-        var images: [UIImage] = []
-        for i in 0...66 {
-            guard let image = UIImage(named: "\(i).png") else { return }
+    class JJGIFImageView: UIImageView {
+    
+    var images: [UIImage] = []
+    
+    /// GIF图片展示
+    ///
+    /// - Parameters:
+    ///   - path: GIF所在路径
+    ///   - duration: 持续时间
+    ///   - repeatCount: 重复次数
+    public func presentationGIFImage(path: String, duration: TimeInterval, repeatCount: Int) {
+        decompositionImage(path)
+        displayGIF(duration, repeatCount)
+    }
+    
+    private func decompositionImage(_ path: String) {
+        //把图片转成data
+        let gifDate = try! Data(contentsOf: URL(fileURLWithPath: path))
+        guard let gifSource = CGImageSourceCreateWithData(gifDate as CFData, nil) else { return }
+        //计算图片张数
+        let count = CGImageSourceGetCount(gifSource)
+        //把每一帧图片拼接到数组
+        for i in 0...count-1 {
+            guard let imageRef = CGImageSourceCreateImageAtIndex(gifSource, i, nil) else { return }
+            let image = UIImage(cgImage: imageRef, scale: UIScreen.main.scale, orientation: .up)
             images.append(image)
         }
-        imageV.animationImages = images
-        imageV.animationDuration = 5
-        imageV.animationRepeatCount = 2
-        imageV.startAnimating()
+    }
+    
+    private func displayGIF(_ duration: TimeInterval, _ repeatCount: Int) {
+        self.animationImages = images
+        self.animationDuration = duration
+        self.animationRepeatCount = repeatCount
+        self.startAnimating()
+    }
+    
+}
 
 ```
 <br>
