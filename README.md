@@ -6,7 +6,7 @@ iOS中GIF的分解、合成和展示
 
 + 这里提供了3个按钮，本质上是两个方法，分解与合成GIF，因为只要有这两个方法的存在，无论我们拿到的是GIF图还是帧图，我们都能简单地在我们的设备上播放GIF。
 
-![](https://upload-images.jianshu.io/upload_images/3350266-83792a4a45d741a0.gif?imageMogr2/auto-orient/strip)
+![](https://upload-images.jianshu.io/upload_images/3350266-23c21fd452010caf.gif?imageMogr2/auto-orient/strip)
 <br>
 ### 代码
 
