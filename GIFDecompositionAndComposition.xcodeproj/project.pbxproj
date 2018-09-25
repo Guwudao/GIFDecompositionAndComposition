@@ -81,6 +81,7 @@
 		28BADA5421590FD400700E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BADA5221590FD400700E9F /* LaunchScreen.storyboard */; };
 		28BADA5C21590FF400700E9F /* GIFGenerationAndDeomposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BADA5B21590FF400700E9F /* GIFGenerationAndDeomposition.swift */; };
 		28BADA5E2159101500700E9F /* coke.gif in Resources */ = {isa = PBXBuildFile; fileRef = 28BADA5D2159101500700E9F /* coke.gif */; };
+		8CDB71B2215A360100703979 /* JJGIFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB71B1215A360100703979 /* JJGIFImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		28BADA5521590FD400700E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28BADA5B21590FF400700E9F /* GIFGenerationAndDeomposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFGenerationAndDeomposition.swift; sourceTree = "<group>"; };
 		28BADA5D2159101500700E9F /* coke.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = coke.gif; sourceTree = "<group>"; };
+		8CDB71B1215A360100703979 /* JJGIFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJGIFImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			children = (
 				289D947A2159353D00236889 /* image */,
 				28BADA5B21590FF400700E9F /* GIFGenerationAndDeomposition.swift */,
+				8CDB71B1215A360100703979 /* JJGIFImageView.swift */,
 				28BADA4921590FD400700E9F /* AppDelegate.swift */,
 				28BADA4B21590FD400700E9F /* ViewController.swift */,
 				28BADA5D2159101500700E9F /* coke.gif */,
@@ -422,6 +425,7 @@
 				28BADA4C21590FD400700E9F /* ViewController.swift in Sources */,
 				28BADA5C21590FF400700E9F /* GIFGenerationAndDeomposition.swift in Sources */,
 				28BADA4A21590FD400700E9F /* AppDelegate.swift in Sources */,
+				8CDB71B2215A360100703979 /* JJGIFImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

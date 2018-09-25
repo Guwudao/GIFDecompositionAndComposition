@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var imageV: UIImageView!
+    @IBOutlet weak var imageV: JJGIFImageView!
     let imageArray = NSMutableArray()
 
     override func viewDidLoad() {
@@ -33,16 +33,9 @@ class ViewController: UIViewController {
         compositionImage(imageArray, "plane", imageArray.count)
     }
     
-    @IBAction func display(_ sender: UIButton) {
-        var images: [UIImage] = []
-        for i in 0...66 {
-            guard let image = UIImage(named: "\(i).png") else { return }
-            images.append(image)
-        }
-        imageV.animationImages = images
-        imageV.animationDuration = 5
-        imageV.animationRepeatCount = 2
-        imageV.startAnimating()
+    @IBAction func display(_ sender: UIButton) {        
+        guard let path = Bundle.main.path(forResource: "coke", ofType: "gif") else { return }
+        imageV.presentationGIFImage(path: path, duration: 5, repeatCount: 1)
     }
     
 }
