@@ -1,6 +1,6 @@
 //
 //  GIFDecompositionAndComposition.swift
-//  fakeGPS
+//  GIFDecompositionAndComposition
 //
 //  Created by JJ on 2018/9/24.
 //  Copyright © 2018年 JJ. All rights reserved.
